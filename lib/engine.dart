@@ -1,10 +1,10 @@
+import 'dart:core';
 import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Engine extends StatefulWidget {
-
   int pos = 0;
 
   List colors = [
@@ -34,16 +34,60 @@ class Engine extends StatefulWidget {
     Colors.lime,
     Colors.transparent
   ];
-  Random ra= new Random();
+
+  List symb = [
+    '!',
+    '@',
+    '~',
+    '#',
+    '%',
+    '^',
+    '&',
+    '*',
+    '-',
+    '/',
+    '?',
+    '_',
+    '>',
+    '<',
+    ']',
+    '[',
+    '{',
+    '}',
+    '|'
+  ];
+
+  Random ra = new Random();
 
   /**
    * The method picks random color in the list and display.
    */
-  Color randomColors(){
-
-      pos = ra.nextInt(25);
+  Color randomColors() {
+    pos = ra.nextInt(25);
     return colors[pos];
+  }
 
+  /**
+   * picks a random sign in the list
+   */
+
+ String symbPicker(){
+   pos = ra.nextInt(19);
+    return symb[pos];
+  }
+
+
+
+
+  String centerCoreWord(String password) {
+
+    for(int i=0;i<password.length;i++){
+      
+
+    }
+
+
+    return password;
   }
 
   @override

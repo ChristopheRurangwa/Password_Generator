@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/Taker.dart';
 
 import 'Generator.dart';
 import 'intro.dart';
@@ -20,9 +21,9 @@ class MyApp extends StatelessWidget {
       initialRoute: '/Intron',
       routes: {
         '/Intron': (context) => Intron(),
-        '/Generator':(context) =>Generator(),
+        '/Generator': (context) => Generator(),
+        '/Taker': (context) => Taker(),
       },
     );
   }
 }
-
