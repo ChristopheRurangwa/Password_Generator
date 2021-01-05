@@ -31,11 +31,11 @@ class _TakerState extends State<Taker> {
               style: TextStyle(color: Colors.green, fontSize: 29),
               cursorColor: Colors.green,
               decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.white,width: 2)),
                 icon: Icon(
                   Icons.clear_all,
                   color: Colors.white70,
                 ),
-                border: OutlineInputBorder(),
                 labelText: 'PASSWORD',
                 hintText: 'Password',
                 labelStyle: TextStyle(
@@ -50,6 +50,7 @@ class _TakerState extends State<Taker> {
             RaisedButton.icon(
                 onPressed: () {
                   Navigator.pushNamed(context, '/Generator');
+
                   //Navigator.pushNamed(context, '/Generator');
                 },
                 icon: Icon(Icons.present_to_all),
