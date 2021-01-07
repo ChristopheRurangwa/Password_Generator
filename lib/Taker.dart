@@ -2,11 +2,25 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Taker extends StatefulWidget {
+
+
+
+
+
+
+
   @override
   _TakerState createState() => _TakerState();
 }
 
 class _TakerState extends State<Taker> {
+
+  String password;
+  List myList;
+
+  Taker tak= new Taker();
+
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,7 +41,13 @@ class _TakerState extends State<Taker> {
               height: 200,
             ),
             TextField(
-              onChanged: (text) {},
+              onChanged: (text) {
+                password=text;
+
+
+                myList.add(password);
+
+              },
               style: TextStyle(color: Colors.green, fontSize: 29),
               cursorColor: Colors.green,
               decoration: InputDecoration(
@@ -49,7 +69,10 @@ class _TakerState extends State<Taker> {
             ),
             RaisedButton.icon(
                 onPressed: () {
+                 // myList.add(password);
+
                   Navigator.pushNamed(context, '/Generator');
+
 
                   //Navigator.pushNamed(context, '/Generator');
                 },

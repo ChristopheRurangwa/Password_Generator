@@ -3,8 +3,35 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:trotter/trotter.dart';
 
 class Engine extends StatefulWidget {
+
+
+  List buidUpPermu(String src) {
+    List permuLst = [];
+
+    final boxOfItems=characters(src),permut=Permutations(4, boxOfItems);
+    for(final permut in permut()){
+
+      permuLst.add(permut);
+
+    }
+
+  return permuLst[4];
+  }
+
+
+
+
+
+  String words(String word) {
+
+    pos = ra.nextInt(25);
+    return"" ;
+  }
+
+
   int pos = 0;
 
   List colors = [
@@ -97,6 +124,7 @@ class Engine extends StatefulWidget {
 class _EngineState extends State<Engine> {
   @override
   Widget build(BuildContext context) {
+
     return Container();
   }
 }

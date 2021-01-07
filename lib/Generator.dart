@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter_app/Taker.dart';
 import 'package:flutter_app/engine.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -11,6 +12,7 @@ class Generator extends StatefulWidget {
 
 class _GeneratorState extends State<Generator> {
   Engine eng = new Engine();
+  Taker tak= new Taker();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -141,7 +143,7 @@ class _GeneratorState extends State<Generator> {
                   child: Container(
                     child: Center(
                         child: Text(
-                      'CONTAINER 1',
+                      '${eng.buidUpPermu("${'teou'}").toString().replaceAll(',', '').replaceAll('[', '').replaceAll(']', '')+" "+eng.symbPicker()}',
                       style: GoogleFonts.aclonica(
                           fontSize: 33,
                           color: eng.randomColors(),

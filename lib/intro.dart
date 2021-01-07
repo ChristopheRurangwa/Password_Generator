@@ -23,10 +23,13 @@ class _IntronState extends State<Intron> {
               padding: const EdgeInsets.all(1.0),
               child: Container(
                 child: Center(
-                    child: Text(
-                  'WELCOME to GenPassword',
-                  style: TextStyle(fontSize: 17, color: Colors.indigoAccent),
-                )),
+                    child: Padding(
+                      padding: const EdgeInsets.all(17.0),
+                      child: Text(
+                  'WELCOME  TO GenPassword',
+                  style: TextStyle(fontSize: 27, color: Colors.indigoAccent),
+                ),
+                    )),
                 width: 210,
                 height: 199,
                 color: Colors.transparent,
