@@ -1,12 +1,10 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Taker extends StatefulWidget {
-
-
-
-
-
+  String password;
 
 
   @override
@@ -15,8 +13,11 @@ class Taker extends StatefulWidget {
 
 class _TakerState extends State<Taker> {
 
-  String password;
-  List myList;
+
+
+  Map map;
+
+
 
   Taker tak= new Taker();
 
@@ -42,10 +43,9 @@ class _TakerState extends State<Taker> {
             ),
             TextField(
               onChanged: (text) {
-                password=text;
+                tak.password=text;
 
 
-                myList.add(password);
 
               },
               style: TextStyle(color: Colors.green, fontSize: 29),
@@ -69,7 +69,10 @@ class _TakerState extends State<Taker> {
             ),
             RaisedButton.icon(
                 onPressed: () {
-                 // myList.add(password);
+                 // Map<String,dynamic> data={
+                 //
+                 // }
+                  //tak.myList.add(tak.password);
 
                   Navigator.pushNamed(context, '/Generator');
 

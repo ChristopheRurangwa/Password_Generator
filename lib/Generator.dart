@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -12,9 +14,50 @@ class Generator extends StatefulWidget {
 
 class _GeneratorState extends State<Generator> {
   Engine eng = new Engine();
-  Taker tak= new Taker();
+  Taker tak = new Taker();
+
+
   @override
   Widget build(BuildContext context) {
+    int pos = 0;
+    Random ra=new Random();
+
+
+    List passwrd=['MODE','PAR','ROBO','Rogue1','MrKegny334','hopeGrams4','brownAnita349','yellowLitter349034','HalloTRKI',
+      'rEASDytl343','proAGILE32','rEAgean32','IamTHeKing32767890','2834732','yourews23','45TRRIVIA12',
+      'LoganWIZ12358','DAKAE431','HAPPYmIND782','iPALEwrr237894','otop3409','zero6754','HEART908','gREEN6','TWENTY213','Prety342','45tyewk','poly8fkj87'];
+
+    creatList(){
+
+      for(int i=0;i<=passwrd.length;i++){
+
+        return passwrd[i].toString();
+      }
+
+    }
+
+    /**
+     * find the permutation and also picks random password from the list of strings
+     */
+    String phrase () {
+
+      pos = ra.nextInt(25);
+
+      for(int i=0;i<=passwrd.length;i++){
+
+        if((passwrd[i].toString().length-1)<=4 ){
+
+            if((passwrd[pos].toString().length-1)<=4)
+          return eng.buidUpPermu(passwrd[i].toString()).toString().replaceAll(',', '').replaceAll(']', '').replaceAll('[', '');
+        }
+        return passwrd[pos].toString();
+
+      }
+
+
+      return passwrd[pos].toString();
+    }
+
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
@@ -58,17 +101,27 @@ class _GeneratorState extends State<Generator> {
               ),
             ),
             Positioned(
+
+                /// the top list
                 left: 85,
-                bottom: 444,
+                bottom: 530,
                 child: Container(
-                    height: 250,
+                    child: ListView(
+                      children: [
+                        Center(child:Text('')),
+                      ],
+                    ),
+                    height: 234,
                     width: 200,
                     decoration: BoxDecoration(
                         border:
                             Border.all(color: eng.randomColors(), width: 1.4),
                         color: Colors.white))),
+
             Positioned(
-                top: 12,
+
+
+                top: 15,
                 left: 135,
                 child: Container(
                   child: Center(
@@ -87,14 +140,15 @@ class _GeneratorState extends State<Generator> {
                 height: 70,
                 width: 340,
                 top: 450,
-                right: -1,
+                left: 3,
+                //right: -1,
                 child: Padding(
                   padding: const EdgeInsets.all(4.0),
                   child: Container(
                     child: Center(
-                        child: Text('CONTAINER 3',
+                        child: Text('${phrase() + " " + eng.symbPicker()}',
                             style: GoogleFonts.aclonica(
-                                fontSize: 33,
+                                fontSize: 27,
                                 color: eng.randomColors(),
                                 fontWeight: FontWeight.bold,
                                 fontStyle: FontStyle
@@ -111,19 +165,18 @@ class _GeneratorState extends State<Generator> {
                 height: 59,
                 width: 340,
                 top: 378,
-                right: 35.1,
+                right: -1,
                 child: Padding(
                   padding: const EdgeInsets.all(2.0),
                   child: Container(
                     child: Center(
                         child: Text(
-                      'CONTAINER 2',
+                          '${phrase() + " " + eng.symbPicker()}',
                       style: GoogleFonts.aclonica(
-                          fontSize: 33,
+                          fontSize: 27,
                           color: eng.randomColors(),
                           fontWeight: FontWeight.bold,
-                          fontStyle: FontStyle
-                              .italic),
+                          fontStyle: FontStyle.italic),
                     )),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -137,19 +190,18 @@ class _GeneratorState extends State<Generator> {
                 height: 59,
                 width: 340,
                 top: 288,
-                right: -1,
+                right: 67,
                 child: Padding(
                   padding: const EdgeInsets.all(2.0),
                   child: Container(
                     child: Center(
                         child: Text(
-                      '${eng.buidUpPermu("${'teou'}").toString().replaceAll(',', '').replaceAll('[', '').replaceAll(']', '')+" "+eng.symbPicker()}',
+                      '${phrase() + " " + eng.symbPicker()}',
                       style: GoogleFonts.aclonica(
-                          fontSize: 33,
+                          fontSize: 27,
                           color: eng.randomColors(),
                           fontWeight: FontWeight.bold,
-                          fontStyle: FontStyle
-                              .italic),
+                          fontStyle: FontStyle.italic),
                     )),
                     decoration: BoxDecoration(
                         color: eng.randomColors(),
@@ -163,19 +215,18 @@ class _GeneratorState extends State<Generator> {
                 height: 59,
                 width: 340,
                 top: 540,
-                right: 35.1,
+                right: 2.1,
                 child: Padding(
                   padding: const EdgeInsets.all(2.0),
                   child: Container(
                     child: Center(
                         child: Text(
-                      'CONTAINER 4',
+                            '${phrase() + " " + eng.symbPicker()}',
                       style: GoogleFonts.aclonica(
-                          fontSize: 33,
+                          fontSize: 27,
                           color: eng.randomColors(),
                           fontWeight: FontWeight.bold,
-                          fontStyle: FontStyle
-                              .italic),
+                          fontStyle: FontStyle.italic),
                     )),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -185,22 +236,22 @@ class _GeneratorState extends State<Generator> {
                   ),
                 )),
             Positioned(
-                height: 59,
+                height: 69,
                 width: 340,
                 top: 620,
-                right: -1,
+                right: 67,
                 child: Padding(
                   padding: const EdgeInsets.all(3.0),
                   child: Container(
                     child: Center(
                         child: Center(
                             child: Text(
-                      'CONTAINER 5',
+                                '${phrase() + " " + eng.symbPicker()}',
                       style: GoogleFonts.aclonica(
-                          fontSize: 33,color: eng.randomColors(),
+                          fontSize: 27,
+                          color: eng.randomColors(),
                           fontWeight: FontWeight.bold,
-                          fontStyle: FontStyle
-                              .italic),
+                          fontStyle: FontStyle.italic),
                     ))),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(10)),

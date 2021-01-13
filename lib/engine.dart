@@ -7,9 +7,9 @@ import 'package:trotter/trotter.dart';
 
 class Engine extends StatefulWidget {
 
-
+  List permuLst = [];
   List buidUpPermu(String src) {
-    List permuLst = [];
+
 
     final boxOfItems=characters(src),permut=Permutations(4, boxOfItems);
     for(final permut in permut()){
