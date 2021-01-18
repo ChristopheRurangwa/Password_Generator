@@ -21,6 +21,27 @@ class Engine extends StatefulWidget {
   return permuLst[4];
   }
 
+   imagesList() {
+
+    pos = ra.nextInt(13);
+    List ime= ['lib/rena.jpg',
+        'lib/f1.jpg',
+        'lib/p1.jpg',
+        'lib/p2.jpg',
+        'lib/p3.jpg',
+        'lib/p4.jpg',
+        'lib/p5.jpg',
+        'lib/p6.jpg',
+        'lib/p7.jpg',
+        'lib/p8.jpg',
+         'lib/p9.jpg',
+        'lib/p10.jpg',
+        'lib/p11.jpg',
+        'lib/p12.jpg'];
+
+    return ime[pos];
+  }
+
 
 
 

@@ -33,6 +33,7 @@ Generator gene= Generator();
       'LoganWIZ12358','DAKAE431','HAPPYmIND782','iPALEwrr237894','otop3409','zero6754','HEART908','gREEN6','TWENTY213','Prety342','45tyewk','poly8fkj87'];
 
     final stopwatch =new Stopwatch()..start();
+    // returns duration it took to run through passwrd2
     timeElapsed(){
       for( int i=0;i<passwrd2.length;i++) {
 
@@ -63,14 +64,24 @@ Generator gene= Generator();
       return passwrd[pos].toString();
     }
 
+    Color colorList() {
+
+      pos = ra.nextInt(12);
+      List col= [Colors.cyan,Colors.cyan[50],Colors.teal,Colors.tealAccent,Colors.teal[50],Colors.yellowAccent,Colors.white70,Colors.greenAccent,Colors.blueAccent,Colors.blueGrey,Colors.yellowAccent,Colors.transparent];
+
+      return col[pos];
+    }
+
+
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-        image: AssetImage('lib/rena.jpg'),
+        image: AssetImage(eng.imagesList()),
         fit: BoxFit.cover,
       )),
       child: Scaffold(
         backgroundColor: Colors.transparent,
+
         appBar: AppBar(
           elevation: 32,
           backgroundColor: Colors.transparent,
@@ -111,6 +122,7 @@ Generator gene= Generator();
                 left: 85,
                 bottom: 530,
                 child: Container(
+
                     child: Container(
                       child: ListView(
                         children: [
@@ -127,13 +139,15 @@ Generator gene= Generator();
                         ],
                       ),
                     ),
-                    height: 234,
+                    height: 234,//////////////////////////
                     width: 200,
                     decoration: BoxDecoration(
+
                         borderRadius: BorderRadius.all(Radius.circular(10)),
+
                         border:
                             Border.all(color: eng.randomColors(), width: 1.4),
-                        color: Colors.white))),
+                        color: colorList()))),
 
             Positioned(
 
@@ -150,7 +164,7 @@ Generator gene= Generator();
                     decoration: BoxDecoration(
                         border: Border.all(color: eng.randomColors(), width: 1.5),
                         borderRadius: BorderRadius.all(Radius.circular(10)),
-                        color: Colors.greenAccent),
+                        color: colorList()),
                     height: 33,
                     width: 150,
                   ),

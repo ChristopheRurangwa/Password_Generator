@@ -28,15 +28,16 @@ class _TakerState extends State<Taker> {
 
   @override
   Widget build(BuildContext context) {
+
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-        image: AssetImage('lib/rena.jpg'),
+        image: AssetImage(eng.imagesList()),
         fit: BoxFit.cover,
       )),
       child: Scaffold(
         appBar: AppBar(
-          title: Text('PASSWORD OF THE DAY',style: GoogleFonts.adamina(
+          title: Text('PASSWORD OF THE DAY! :)',style: GoogleFonts.adamina(
               fontSize: 23,
               color: eng.randomColors(),
               fontWeight: FontWeight.bold,
