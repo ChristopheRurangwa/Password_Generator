@@ -14,34 +14,39 @@ class Generator extends StatefulWidget {
 
 class _GeneratorState extends State<Generator> {
   Engine eng = new Engine();
-  Taker tak = new Taker();
 
+Generator gene= Generator();
 
   @override
   Widget build(BuildContext context) {
     int pos = 0;
     Random ra=new Random();
 
+    List passwrd2=[
+   'uneligne123','larger','classifieds','threeejdfj','Throwesojf','coninaqoir12'
+    ];
 
     List passwrd=['MODE','PAR','ROBO','Rogue1','MrKegny334','hopeGrams4','brownAnita349','yellowLitter349034','HalloTRKI',
+      'redsXOP','UYOW#','jumlpUpANDdown','greenlWENF','YELLOWSPRINDFSFDF','zero&*&',"DKJ86JHDFJH",'MY name is the dk637#','greeenf 5k4','tewoow+jdfk','userTERDF','<DJKKFKDF>yougabetreri','87tewojkf#'
+          'the blackhole##%','the yelllowhole','the gdreen hole','hole2343','holeYELLOW','BIERSD','sidebyside','youverlkj','laketanganyika','ungwaro46','cyclethebeginingofanother','one23939'
       'rEASDytl343','proAGILE32','rEAgean32','IamTHeKing32767890','2834732','yourews23','45TRRIVIA12',
       'LoganWIZ12358','DAKAE431','HAPPYmIND782','iPALEwrr237894','otop3409','zero6754','HEART908','gREEN6','TWENTY213','Prety342','45tyewk','poly8fkj87'];
 
-    creatList(){
+    final stopwatch =new Stopwatch()..start();
+    timeElapsed(){
+      for( int i=0;i<passwrd2.length;i++) {
 
-      for(int i=0;i<=passwrd.length;i++){
+         return stopwatch.elapsed;
+      }}
 
-        return passwrd[i].toString();
-      }
 
-    }
 
     /**
      * find the permutation and also picks random password from the list of strings
      */
     String phrase () {
 
-      pos = ra.nextInt(25);
+      pos = ra.nextInt(50);
 
       for(int i=0;i<=passwrd.length;i++){
 
@@ -106,14 +111,26 @@ class _GeneratorState extends State<Generator> {
                 left: 85,
                 bottom: 530,
                 child: Container(
-                    child: ListView(
-                      children: [
-                        Center(child:Text('')),
-                      ],
+                    child: Container(
+                      child: ListView(
+                        children: [
+
+                          for(var item in passwrd )
+
+                            Center(child: Text(item)),
+
+                          SizedBox(height: 7,),
+                          for(var item2 in passwrd2 )
+
+                            Center(child: Text(item2)),
+
+                        ],
+                      ),
                     ),
                     height: 234,
                     width: 200,
                     decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
                         border:
                             Border.all(color: eng.randomColors(), width: 1.4),
                         color: Colors.white))),
@@ -121,20 +138,22 @@ class _GeneratorState extends State<Generator> {
             Positioned(
 
 
-                top: 15,
-                left: 135,
-                child: Container(
-                  child: Center(
-                      child: Text(
-                    "SECONDS",
-                    style: TextStyle(),
-                  )),
-                  decoration: BoxDecoration(
-                      border: Border.all(color: eng.randomColors(), width: 1.5),
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      color: Colors.greenAccent),
-                  height: 33,
-                  width: 100,
+                top: 12,
+                left: 115,
+                child: Center(
+                  child: Container(/////////////////________________
+                    child: Center(
+                        child: Text(
+                          '${timeElapsed()} secs',
+                      style: TextStyle(),
+                    )),
+                    decoration: BoxDecoration(
+                        border: Border.all(color: eng.randomColors(), width: 1.5),
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        color: Colors.greenAccent),
+                    height: 33,
+                    width: 150,
+                  ),
                 )),
             Positioned(
                 height: 70,
@@ -162,13 +181,13 @@ class _GeneratorState extends State<Generator> {
                   ),
                 )),
             Positioned(
-                height: 59,
+                height: 69,
                 width: 340,
                 top: 378,
                 right: -1,
                 child: Padding(
                   padding: const EdgeInsets.all(2.0),
-                  child: Container(
+                  child: Container(//second container
                     child: Center(
                         child: Text(
                           '${phrase() + " " + eng.symbPicker()}',
@@ -187,13 +206,13 @@ class _GeneratorState extends State<Generator> {
                   ),
                 )),
             Positioned(
-                height: 59,
+                height: 69,
                 width: 340,
                 top: 288,
                 right: 67,
                 child: Padding(
                   padding: const EdgeInsets.all(2.0),
-                  child: Container(
+                  child: Container(// first container
                     child: Center(
                         child: Text(
                       '${phrase() + " " + eng.symbPicker()}',
@@ -212,7 +231,7 @@ class _GeneratorState extends State<Generator> {
                   ),
                 )),
             Positioned(
-                height: 59,
+                height: 70,
                 width: 340,
                 top: 540,
                 right: 2.1,
@@ -221,7 +240,7 @@ class _GeneratorState extends State<Generator> {
                   child: Container(
                     child: Center(
                         child: Text(
-                            '${phrase() + " " + eng.symbPicker()}',
+                            '${phrase() + " " + eng.symbPicker()} ',
                       style: GoogleFonts.aclonica(
                           fontSize: 27,
                           color: eng.randomColors(),
@@ -246,7 +265,7 @@ class _GeneratorState extends State<Generator> {
                     child: Center(
                         child: Center(
                             child: Text(
-                                '${phrase() + " " + eng.symbPicker()}',
+                                '${phrase() + " " + eng.symbPicker()}',//last container
                       style: GoogleFonts.aclonica(
                           fontSize: 27,
                           color: eng.randomColors(),

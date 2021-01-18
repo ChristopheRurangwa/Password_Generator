@@ -30,6 +30,30 @@ class Engine extends StatefulWidget {
     pos = ra.nextInt(25);
     return"" ;
   }
+  List passwrd=['MODE','PAR','ROBO','Rogue1','MrKegny334','hopeGrams4','brownAnita349','yellowLitter349034','HalloTRKI',
+    'redsXOP','UYOW#','jumlpUpANDdown','greenlWENF','YELLOWSPRINDFSFDF','zero&*&',"DKJ86JHDFJH",'MY name is the dk637#','greeenf 5k4','tewoow+jdfk','userTERDF','<DJKKFKDF>yougabetreri','87tewojkf#'
+        'the blackhole##%','the yelllowhole','the gdreen hole','hole2343','holeYELLOW','BIERSD','sidebyside','youverlkj','laketanganyika','ungwaro46','cyclethebeginingofanother','one23939'
+        'rEASDytl343','proAGILE32','rEAgean32','IamTHeKing32767890','2834732','yourews23','45TRRIVIA12',
+    'LoganWIZ12358','DAKAE431','HAPPYmIND782','iPALEwrr237894','otop3409','zero6754','HEART908','gREEN6','TWENTY213','Prety342','45tyewk','poly8fkj87'];
+
+  String pword () {
+
+    pos = ra.nextInt(50);
+
+    for(int i=0;i<=passwrd.length;i++){
+
+      if((passwrd[i].toString().length-1)<=4 ){
+
+        if((passwrd[pos].toString().length-1)<=4)
+          return buidUpPermu(passwrd[i].toString()).toString().replaceAll(',', '').replaceAll(']', '').replaceAll('[', '');
+      }
+      return passwrd[pos].toString();
+
+    }
+
+
+    return passwrd[pos].toString();
+  }
 
 
   int pos = 0;
